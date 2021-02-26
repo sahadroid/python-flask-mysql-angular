@@ -6,8 +6,10 @@
 
 
 
-#####git clone https://github.com/sahadroid/python-flask-mysql-angular.git 
-##### cd python-flask-mysql-angular
+git clone https://github.com/sahadroid/python-flask-mysql-angular.git 
+
+
+cd python-flask-mysql-angular
 
 
 
