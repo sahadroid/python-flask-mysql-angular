@@ -48,3 +48,7 @@ ListRecord
 
 Update Form Record
 ![updatedata](https://user-images.githubusercontent.com/27715383/109252129-5fb5c780-781f-11eb-97c3-9c7bc9d263e3.png)
+
+Add New Record Form Record
+![adddata](https://user-images.githubusercontent.com/27715383/109252250-a3a8cc80-781f-11eb-999d-cb0ca62f242b.png)
+ithubusercontent.com/27715383/109252129-5fb5c780-781f-11eb-97c3-9c7bc9d263e3.png)
