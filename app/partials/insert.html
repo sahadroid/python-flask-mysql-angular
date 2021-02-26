@@ -1,0 +1,49 @@
+<div class="row justify-content-center mt-0 mb-2">
+  <div class="col-12 col-sm-5">
+    <div class="card border rounded-0">
+      <div class="card-header rounded-0">
+        <h5 class="form_title">FORM ADD DATA</h5>
+      </div>
+      <div class="card-body">
+        <form>  
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Severity</label>
+            <input type="text" autocomplete="off" class="rounded-0 form-control" autofocus="true" ng-model="severity" />
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Category</label>
+            <input type="text" autocomplete="off" class="rounded-0 form-control border" ng-model="category" />
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Device</label>
+            <input type="text" autocomplete="off" class="rounded-0 form-control border" ng-model="device" />
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Name</label>
+            <input type="text" autocomplete="off" class="rounded-0 form-control border" ng-model="name" />
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Status</label>
+            <select class="form-control rounded-0" ng-model="status" id="exampleFormControlSelect1">
+              <option value="Unresolved">Unresolved</option>
+              <option value="Resolved">Resolved</option>
+            </select>
+          </div>
+
+        </form>
+      </div>
+      <div class="card-footer bg-white">
+
+        <button ng-click="submitInsert()" class="btn btn-info mx-sm-1 mb-2 btn-add rounded-0">
+          <i class="fa fa-check"> </i> Save Data
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+	<title>Program Test Python + Flask + Angular + Msql</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular-route.js"></script>
+<script src="/js/app.js"></script>
+<body>
+	<div class="wrapper">
+		<!-- Sidebar Holder -->
+		<nav id="sidebar">
+			<div class="sidebar-header text-center">
+				<h3>CANOPY</h3>
+			</div>
+
+			<ul class="list-unstyled components">
+				<li><a href="#"><i class="fa fa-tachometer-alt"></i> Dashboard</a></li>
+				<li><a href="#"><i class="fa fa-archive"></i> System Info</a></li>
+
+
+				<li class="active">
+					<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+							class="fa fa-database"></i> Monitoring Data </a>
+
+					<ul class="collapse list-unstyled" id="homeSubmenu">
+						<li>
+							<a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false"
+								class="dropdown-toggle"><i class="fa fa-exclamation-triangle"></i> Incidents</a>
+							<ul class="collapse list-unstyled" id="homeSubmenu2">
+								<li>
+									<a href="#">Overview</a>
+								</li>
+								<li>
+									<a href="#">Event Log</a>
+								</li>
+								<li>
+									<a href="#">Settings</a>
+								</li>
+							</ul>
+
+						</li>
+					</ul>
+				</li>
+
+				</li>
+
+				<li>
+					<a href="#homeSubmenu_a" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+							class="fa fa-chart-area"></i> Analytics</a>
+					<ul class="collapse list-unstyled" id="homeSubmenu_a">
+						<li>
+							<a href="#">Page 1</a>
+						</li>
+						<li>
+							<a href="#">Page 2</a>
+						</li>
+						<li>
+							<a href="#">Page 3</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#homeSubmenu_b" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+							class="fa fa-tools"></i> Tools</a>
+					<ul class="collapse list-unstyled" id="homeSubmenu_b">
+						<li>
+							<a href="#">Page 1</a>
+						</li>
+						<li>
+							<a href="#">Page 2</a>
+						</li>
+						<li>
+							<a href="#">Page 3</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- Page Content Holder -->
+		<div id="content">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid">
+					<button type="button" id="sidebarCollapse" class="navbar-btn">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+					<div class="status text-right text-muted" ng-bind="status">					
+					</div>
+				</div>
+			</nav>
+			<div ng-view class="container-fluid bg-light p-3 mb-4 shadow bg-light rounded">
+			</div>
+		</div>
+	</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
