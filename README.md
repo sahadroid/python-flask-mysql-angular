@@ -8,7 +8,12 @@
 
 git clone https://github.com/sahadroid/python-flask-mysql-angular.git 
 
+create database in mysql :
 
+	database name : canopy 
+	import : canopy.sql
+
+open terminal as admin 
 cd python-flask-mysql-angular
 
 
