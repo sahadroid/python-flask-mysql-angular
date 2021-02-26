@@ -45,3 +45,6 @@ Sample:
 
 ListRecord
 ![listrecord](https://user-images.githubusercontent.com/27715383/109251806-b5d63b00-781e-11eb-878d-0e4fec2c69fe.png)	
+
+Update Form Record
+![updatedata](https://user-images.githubusercontent.com/27715383/109252129-5fb5c780-781f-11eb-97c3-9c7bc9d263e3.png)
