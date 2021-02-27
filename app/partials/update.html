@@ -1,5 +1,5 @@
 <div class="row justify-content-center mt-0 mb-2">
-  <div class="col-12 col-sm-5">
+  <div class="col-12 col-sm-6">
     <div class="card border rounded-0">
       <div class="card-header rounded-0">
         <h5 class="form_title">FORM UPDATE DATA</h5>
@@ -7,45 +7,32 @@
       <div class="card-body">
         <form>
           <div class="form-group">
-            <label for="exampleFormControlInput1">ID</label>
-            <input type="text" autocomplete="off" class="rounded-0 form-control" disabled="true" ng-model="incident.id" />
+            <label for="exampleFormControlInput1">ID User</label>
+            <input type="text" autocomplete="off" class="rounded-0 form-control" disabled="true" ng-model="user.id_users" />
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlInput1">Severity</label>
-            <input type="text" autocomplete="off" class="rounded-0 form-control" ng-model="incident.severity" />
+            <label for="exampleFormControlInput1">Nama</label>
+            <input type="text" autocomplete="off" class="rounded-0 form-control" ng-model="user.fullname" />
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlInput1">Category</label>
-            <input type="text" autocomplete="off" class="rounded-0 form-control border" ng-model="incident.category" />
+            <label for="exampleFormControlInput1">Phone</label>
+            <input type="text" autocomplete="off" class="rounded-0 form-control border" ng-model="user.phone" />
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlInput1">Device</label>
-            <input type="text" autocomplete="off" class="rounded-0 form-control border" ng-model="incident.device" />
-          </div>
-
-
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Name</label>
-            <input type="text" autocomplete="off" class="rounded-0 form-control border" ng-model="incident.name" />
-          </div>
-
-
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Name</label>
-            <select class="form-control rounded-0" ng-model="incident.status" id="exampleFormControlSelect1">
-              <option value="Unresolved">Unresolved</option>
-              <option value="Resolved">Resolved</option>
-            </select>
-          </div>
+            <label for="exampleFormControlInput1">Email</label>
+            <input type="text" autocomplete="off" class="rounded-0 form-control border" ng-model="user.email" />
+          </div>		    
 
         </form>
       </div>
       <div class="card-footer bg-white">
-
-        <button ng-click="submitUpdate()" class="btn btn-info mx-sm-1 mb-2 btn-add rounded-0">
+		<button ng-click="backtoindex()" class="btn btn-danger mx-sm-1 mb-2 btn-add rounded-0">
+          <i class="fa fa-chevron-left"> </i> Back
+        </button>
+        <button ng-click="submitUpdate()" class="btn btn-success mx-sm-1 mb-2 btn-add rounded-0">
           <i class="fa fa-edit"> </i> Update Data
         </button>
       </div>

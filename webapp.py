@@ -7,9 +7,13 @@ import random
 app = Flask(__name__, static_url_path='')
 
 
-def AsDict(incident):
+def AsDict(user):
   return {
-      'id': incident.id, 'severity': incident.severity, 'category': incident.category,'device': incident.device,'name': incident.name, 'status': incident.status, 'starttime': incident.starttime}
+      'id_users': user.id_users, 'fullname': user.fullname, 'phone': user.phone,'email': user.email,'created_date': str(user.created_date), 'status_active': user.status_active, 'periode_weekly': user.periode_weekly, 'periode_monthly': user.periode_monthly}
+
+def AsDictx(subscribe):
+  return {
+      'id_subscribe': subscribe.id_subscribe, 'created_date': str(subscribe.created_date), 'id_users': subscribe.id_users, 'periode': subscribe.periode}
 
 
 @app.route('/')
@@ -37,16 +41,16 @@ def send_css(path):
 
 @app.route('/rest/query')
 def get_all():
-    incidents = model.AllIncidents()
-    r = [AsDict(incident) for incident in incidents ]
+    users = model.AllUsers()
+    r = [AsDict(user) for user in users ]
     return json.dumps(r)
 
 
 @app.route('/rest/update', methods=['POST'])
 def update():
     r = json.loads(request.get_data())
-    incident = model.UpdateIncident(r['id'], r['severity'], r['category'], r['device'], r['name'], r['status'])
-    r = AsDict(incident)
+    user = model.UpdateUser(r['id_users'], r['fullname'], r['phone'], r['email'], r['periode_weekly'], r['periode_monthly'])
+    r = AsDict(user)
     return json.dumps(r)
 
 
@@ -54,20 +58,28 @@ def update():
 def insert():
     r = json.loads(request.get_data())
     rand = random.randint(10000, 9999999) 
-    starttime = str(datetime.now()) 
-    ds = starttime.split(".") 
-    dsx = ds[0]
-    incident = model.InsertIncident(rand, r['severity'], r['category'], r['device'], r['name'], r['status'], dsx)
-    r = AsDict(incident)
+    created_date = datetime.now().date()
+    status_active = "Y";
+    periode_weekly = "N";
+    periode_monthly = "N";
+    user = model.InsertUser(rand, r['fullname'], r['phone'], r['email'], created_date, status_active, periode_weekly, periode_monthly)
+    r = AsDict(user)
     return json.dumps(r)
 
 
 @app.route('/rest/delete', methods=['POST'])
 def delete():
     r = json.loads(request.get_data())
-    incident = model.DeleteIncident(r['id'])
-    return json.dumps(AsDict(incident))
+    user = model.DeleteUser(r['id_users'])
+    return json.dumps(AsDict(user))
 
+@app.route('/rest/logsubscribe', methods=['POST'])
+def logsubscribe():
+    r = json.loads(request.get_data())
+    rand_ = random.randint(10000, 9999999) 
+    created_date = datetime.now().date()
+    subscribe = model.UpdateSubscribe(rand_, created_date, r['id_users'], r['periode'])
+    return json.dumps(AsDictx(subscribe))
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)
