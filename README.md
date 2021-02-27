@@ -53,5 +53,5 @@ Log User Subscribes
 Update Edit Data User
 ![canopyscreen](https://user-images.githubusercontent.com/27715383/109381121-ebf0e900-790a-11eb-95f6-6f9a581ff5e4.png)
 
-Add New Record Form Record
-![adddata](https://user-images.githubusercontent.com/27715383/109252250-a3a8cc80-781f-11eb-999d-cb0ca62f242b.png)
+Register New User
+![canopyscreen](https://user-images.githubusercontent.com/27715383/109381189-5d309c00-790b-11eb-8955-45cb37a8e5a1.png)
