@@ -57,5 +57,12 @@ Update Edit Data User
 Register New User
 ![canopyscreen](https://user-images.githubusercontent.com/27715383/109381189-5d309c00-790b-11eb-8955-45cb37a8e5a1.png)
 
+
+Print To PDF - Select From Date - To Date  
+![canopyscreen](https://user-images.githubusercontent.com/27715383/109785545-cfbcb700-7c3e-11eb-8b08-706a9f887f7b.png)
+
+
 Report to PDF
 ![canopyscreen](https://user-images.githubusercontent.com/27715383/109784751-f62e2280-7c3d-11eb-80ee-14dd423879a5.png)
+
+
