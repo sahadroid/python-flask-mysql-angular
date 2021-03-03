@@ -1,72 +1,71 @@
-<div class="row justify-content-center mt-2">
-  <div class="col-12 col-sm-12">
-  
-<form>
-  <div class="form-row rounded-0">
-	
-    <div class="form-group col-md-2">
-      <input type="text" class="form-control rounded-0" id="startdate" placeholder="Start Date">
-    </div>
-    <div class="form-group col-md-2">
-      <input type="text" class="form-control rounded-0" id="todate" placeholder="To Date">
-    </div>
-    <div class="form-group col-md-2">
-      <button ng-click="inprogress()" class="btn btn-primary mx-sm-1 btn-add rounded-0">
-        <i class="fa fa-print"></i> Preview
-      </button>	
-    </div>	
-    <div class="form-group col-md-6 text-right">
-      <button ng-click="invite()" class="btn btn-info mx-sm-1 btn-add rounded-0">
-        <i class="fa fa-plus"> </i> Add New Record
-      </button>
-    </div>		
-  </div>  
-</form>    
-  </div>
+<div class="row justify-content-center">
+	<div class="col-12 col-sm-12">
+		<form class="bg-white">
+			<div class="form-row rounded-0">
+				<div class="form-group col-md-2">
+					<input type="text" class="form-control rounded-0" data-date-format="d M, yyyy" id="fromdate" placeholder="Start Date">
+				</div>
+				<div class="form-group col-md-2">
+					<input type="text" class="form-control rounded-0" id="todate" data-date-format="d M, yyyy" placeholder="To Date">
+				</div>
+				<div class="form-group col-md-2">
+					<button ng-click="previewpdf()" class="btn btn-primary mx-sm-1 btn-add rounded-0">
+					<i class="fa fa-print"></i> Print
+					</button>	
+				</div>	
+				<div class="form-group col-md-6 text-right">
+					<button ng-click="invite()" class="btn btn-info mx-sm-1 btn-add rounded-0">
+					<i class="fa fa-plus"> </i> Add New Record
+					</button>
+				</div>		
+			</div>  
+		</form>    
+	</div>
 </div>
 
 
 <div class="row justify-content-center mt-2 mb-2">
-  <div class="col-12 col-sm-12">
-    <div class="table-responsive mb-3">
-      <table class="table table-hover table-sm">
-        <thead>
-          <tr class="bg-light text-muted">
-            <th scope="col" rowspan="2" class="border text-center">No.</th>
-			<th scope="col" rowspan="2" class="border text-left">&nbsp; Date Register</th>
-            <th scope="col" rowspan="2" class="border">&nbsp; Name</th>
-            <th scope="col" rowspan="2" class="border">&nbsp; Email</th>			
-			<th scope="col" colspan="3" class="border text-center">Subscribe Periode</th>	
-			<th scope="col" rowspan="2" class="border text-center">Active</th>
-            <th scope="col" rowspan="2" class="border text-center">Actions</th>
-          </tr>
-          <tr class="bg-light text-muted">
-			<th scope="col" class="border text-center">Weekly</th>		  
-            <th scope="col" class="border text-center">Monthly</th>
-			<th scope="col" class="border text-center">Log</th>
-          </tr>		  
-        </thead>
+	<div class="col-12 col-sm-12">
+		<div class="table-responsive mb-3">
+			<table class="table table-hover table-sm">
+				<thead>
+					<tr class="table-dark text-light">
+					<th scope="col" rowspan="2" class="border text-center">No.</th>
+					<th scope="col" rowspan="2" class="border text-center">Active</th>
+					<th scope="col" rowspan="2" class="border text-left">&nbsp; Date Register</th>
+					<th scope="col" rowspan="2" class="border">&nbsp; Name</th>
+					<th scope="col" rowspan="2" class="border">&nbsp; Email</th>			
+					<th scope="col" colspan="4" class="border text-center">Subscribe to Report Types</th>	
+					<th scope="col" rowspan="2" class="border text-center">Actions</th>
+					</tr>
+					<tr class="table-dark text-light">
+					<th scope="col" class="border text-center">Weekly</th>		  
+					<th scope="col" class="border text-center">Monthly</th>
+					<th scope="col" class="border text-center">Log</th>
+					<th scope="col" class="border text-center">Send</th>
+					</tr>		  
+				</thead>
 
-        <body>
-          <tr ng-repeat="user in users" class="bg-white">
-            <td class="text-center border" width='5%'>{{ $index + 1 }}.</td>
-            <!--<td class="{{user.severity == 'Info'?' text-success':' text-warning'}}">&nbsp;{{ user.severity }}</td>-->
-			<td class="text-left border">&nbsp; <i class="fa fa-calendar-alt"></i> {{ user.created_date }}</td>
-            <td class="text-left border">&nbsp; {{ user.fullname }}</td>
-            <td class="text-left border">&nbsp;{{ user.email }}</td>	
-			<td class="text-center border"><button class="btn {{user.periode_weekly == 'Y'?' btn-success':' btn-secondary'}} btn-sm rounded-0" ng-click="check_box(user,'Weekly')">{{ user.periode_weekly }}</button></td>	
-			<td class="text-center border"><button class="btn {{user.periode_monthly == 'Y'?' btn-success':' btn-secondary'}} btn-sm rounded-0" ng-click="check_box(user,'Monthly')">{{ user.periode_monthly }}</button></td>	
-			<td class="text-center border"><button class="btn btn-warning text-light btn-sm rounded-0" ng-click="logsubscribe(user)"><i class="fa fa-chart-bar"></i></button></td>
-			<td class="text-center border"><button class="btn btn-sm rounded-circle {{user.status_active == 'Y'?' btn-success ':' btn-danger'}}" ng-click="inprogress()"><i class="fa fa-{{user.status_active == 'Y'?'user-check':'user-slash'}}"></i></button></td>	
-            <!--<td class="{{user.status == 'Unresolved'?' text-danger':''}}">&nbsp;{{ user.status }}</td>-->
-            <td class="text-center">
-			<button class="btn btn-primary btn-sm rounded-0" ng-click="inprogress()"><i class="fa fa-paper-plane"></i> To Email</button>
-              <button class="btn btn-info btn-sm rounded-0" ng-click="update(user)"><i class="fa fa-pencil-alt"></i> Edit</button>
-              <button class="btn btn-info btn-sm rounded-0" ng-click="delete(user)"><i class="fa fa-times"></i> Delete</button>              
-            </td>
-          </tr>
-          </tbody>
-      </table>
-    </div>    
-  </div>
+				<tbody class="bg-white" ng-repeat="user in users">
+					<tr class="tr_active_{{user.id_users}} {{user.status_active == 'Y'?'table-white':'table-danger'}}">
+						<td class="text-center border" width='5%'>{{ $index + 1 }}.</td>
+						<td class="text-center">
+							<button class="btn btn_active_{{user.id_users}} btn-sm rounded-0 {{user.status_active == 'Y'?'btn-success':'btn-danger'}}" ng-click="useractive(user,user.status_active)"><i class="fa {{user.status_active == 'Y'?'fa-user-check':'fa-user-slash'}} fa_active_{{user.id_users}}"></i></button>
+						</td>						
+						<td class="text-left border" width='20%'>&nbsp; <i class="fa fa-calendar-alt text-muted"></i> {{ user.created_date }}</td>
+						<td class="text-left border">&nbsp; {{ user.fullname }}</td>
+						<td class="text-left border">&nbsp;{{ user.email }}</td>	
+						<td class="text-center border"><button class="btn btn_weekly_{{user.id_users}}  {{user.periode_weekly == 'Y'?'btn-success':'btn-secondary'}} btn-sm rounded-0" ng-click="check_box(user,'weekly',user.periode_weekly)" ><i class="fa {{user.periode_weekly == 'Y'?'fa-bell':'fa-bell-slash'}} fa_weekly_{{user.id_users}}"></i></button></td>	
+						<td class="text-center border"><button class="btn btn_monthly_{{user.id_users}} {{user.periode_monthly == 'Y'?'btn-success':'btn-secondary'}} btn-sm rounded-0" ng-click="check_box(user,'monthly',user.periode_monthly)"><i class="fa {{user.periode_monthly == 'Y'?'fa-bell':'fa-bell-slash'}} fa_monthly_{{user.id_users}}"></i></button></td>	
+						<td class="text-center border"><button class="btn btn-warning text-light btn-sm rounded-0" ng-click="logsubscribe(user)"><i class="fa fa-chart-bar"></i></button></td>	
+						<td class="text-center border"><button title="send report" class="btn_visible_{{user.id_users}} {{user.status_active == 'Y'?'visible':'invisible'}} btn btn-primary btn-sm rounded-0" ng-click="inprogress()"><i class="fa fa-paper-plane"></i></button></td>
+						<td class="text-center">							
+							<button title="edit data user" class="btn btn-info btn-sm rounded-0" ng-click="update(user)"><i class="fa fa-pencil-alt"></i></button>
+							<button title="remove data user" class="btn btn-info btn-sm rounded-0" ng-click="delete(user)"><i class="fa fa-times"></i></button>              
+						</td>						
+					</tr>
+				</tbody>
+			</table>
+		</div>    
+	</div>
 </div>

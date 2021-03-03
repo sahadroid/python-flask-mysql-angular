@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2021 at 08:41 AM
+-- Generation Time: Mar 03, 2021 at 09:42 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.30
 
@@ -39,12 +39,13 @@ CREATE TABLE `subcribes` (
 --
 
 INSERT INTO `subcribes` (`id_subscribe`, `created_date`, `id_users`, `periode`) VALUES
-('2638823', '2021-02-27', '6071537', 'Weekly'),
-('2656485', '2021-02-27', '2162016', 'Monthly'),
-('2961529', '2021-02-27', '1145259', 'Weekly'),
-('3326905', '2021-02-27', '9625001', 'Monthly'),
-('3850411', '2021-02-27', '2162016', 'Weekly'),
-('9383841', '2021-02-27', '1145259', 'Monthly');
+('1307733', '2021-03-03', '1339606', 'weekly'),
+('2806936', '2021-03-03', '1339606', 'monthly'),
+('3626633', '2021-03-03', '1339606', 'monthly'),
+('3871093', '2021-03-03', '1145259', 'weekly'),
+('5310296', '2021-03-03', '1339606', 'weekly'),
+('8046808', '2021-03-03', '1145259', 'monthly'),
+('8415206', '2021-03-03', '1145259', 'monthly');
 
 -- --------------------------------------------------------
 
@@ -57,7 +58,7 @@ CREATE TABLE `users` (
   `fullname` varchar(100) NOT NULL,
   `phone` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `created_date` date NOT NULL,
+  `created_date` datetime NOT NULL,
   `status_active` varchar(1) NOT NULL,
   `periode_weekly` varchar(1) NOT NULL,
   `periode_monthly` varchar(1) NOT NULL
@@ -68,12 +69,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_users`, `fullname`, `phone`, `email`, `created_date`, `status_active`, `periode_weekly`, `periode_monthly`) VALUES
-('1145259', 'Thomas', '0812 9333 3432', 'thomas@gmail.com', '2021-02-27', 'Y', 'Y', 'Y'),
-('2162016', 'Rudi', '0812 3434 9543', 'rudi@gmail.com', '2021-01-11', 'Y', 'N', 'Y'),
-('6071537', 'Linda', '0823 8734', 'linda@gmail.com', '2021-02-27', 'N', 'Y', 'N'),
-('7969829', 'Siska', '0834 8454 8454', 'siska@gmail.com', '2021-01-11', 'Y', 'N', 'Y'),
-('8159554', 'Wawan', '0823 8745 0823', 'wawan@gmail.com', '2021-01-11', 'Y', 'N', 'Y'),
-('9625001', 'Lia Waroka', '0823 8743 2432', 'lia@gmail.com', '2021-01-10', 'Y', 'Y', 'Y');
+('1145259', 'Thomas Muller', '0812 9333 3432', 'thomas@gmail.com', '2021-02-27 01:03:05', 'Y', 'Y', 'N'),
+('2162016', 'Rudi Salam', '0812 3434 9543', 'rudi@gmail.com', '2021-01-11 02:04:02', 'N', 'Y', 'Y'),
+('7969829', 'Siska', '0834 8454 8454', 'siska@gmail.com', '2021-01-11 01:04:07', 'Y', 'Y', 'N'),
+('8159554', 'Wawan Sinulingga', '0823 8745 0823', 'wawan@gmail.com', '2021-01-11 02:04:15', 'Y', 'N', 'Y'),
+('9625001', 'Lia Waroka', '0823 8743 2432', 'lia@gmail.com', '2021-01-10 00:00:00', 'Y', 'N', 'Y');
 
 --
 -- Indexes for dumped tables

@@ -6,7 +6,6 @@ import random
 
 app = Flask(__name__, static_url_path='')
 
-
 def AsDict(user):
   return {
       'id_users': user.id_users, 'fullname': user.fullname, 'phone': user.phone,'email': user.email,'created_date': str(user.created_date), 'status_active': user.status_active, 'periode_weekly': user.periode_weekly, 'periode_monthly': user.periode_monthly}
@@ -58,11 +57,13 @@ def update():
 def insert():
     r = json.loads(request.get_data())
     rand = random.randint(10000, 9999999) 
-    created_date = datetime.now().date()
+    created_date = str(datetime.now())
+    created_date1 = created_date.split(".")
+    created_date2 = created_date1[0];
     status_active = "Y";
     periode_weekly = "N";
     periode_monthly = "N";
-    user = model.InsertUser(rand, r['fullname'], r['phone'], r['email'], created_date, status_active, periode_weekly, periode_monthly)
+    user = model.InsertUser(rand, r['fullname'], r['phone'], r['email'], created_date2, status_active, periode_weekly, periode_monthly)
     r = AsDict(user)
     return json.dumps(r)
 
@@ -73,13 +74,21 @@ def delete():
     user = model.DeleteUser(r['id_users'])
     return json.dumps(AsDict(user))
 
+
+@app.route('/rest/subscribeactive', methods=['POST'])
+def subscribeactive():
+    r = json.loads(request.get_data())
+    user = model.UpdateSubscribeActive(r['id_users'], r['status'])
+    return json.dumps(r)
+
 @app.route('/rest/logsubscribe', methods=['POST'])
 def logsubscribe():
     r = json.loads(request.get_data())
     rand_ = random.randint(10000, 9999999) 
     created_date = datetime.now().date()
     subscribe = model.UpdateSubscribe(rand_, created_date, r['id_users'], r['periode'])
-    return json.dumps(AsDictx(subscribe))
+    user = model.UpdateSubscribeUser(r['id_users'], r['periode'], r['status'])
+    return json.dumps(r)
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)

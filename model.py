@@ -28,7 +28,6 @@ def UpdateSubscribe(id_subscribe, created_date, id_users, periode):
     session.add(subscribe)
     session.commit()
     session.close()
-    return subscribe
 
 
 class Users(Base):
@@ -41,24 +40,57 @@ class Users(Base):
     status_active = Column(String(1),nullable=False)
     periode_weekly = Column(String(1),nullable=False)    
     periode_monthly = Column(String(1),nullable=False)   
+    
 def AllUsers():
     session = connector.get_sql_session()
-    result = session.query(Users).all()
+    result = session.query(Users).order_by(Users.created_date.desc()).all()
     session.close()
     return result
 
 
+    
 def UpdateUser(id_users, fullname, phone, email, periode_weekly, periode_monthly):
     session = connector.get_sql_session()
     row = session.query(Users).filter(Users.id_users == id_users).first()
     row.fullname = fullname
     row.phone = phone
     row.email = email
-    #row.periode_weekly = periode_weekly
     session.add(row)
     session.commit()
     session.close()
     return row
+
+
+def UpdateSubscribeActive(id_users, status):
+    session = connector.get_sql_session()
+    row = session.query(Users).filter(Users.id_users == id_users).first()
+    
+    if status == "Y":
+        row.status_active = "N"     
+    else:
+        row.status_active = "Y"     
+    session.add(row)
+    session.commit()
+    session.close()
+    return row
+
+def UpdateSubscribeUser(id_users, periode, status):
+    session = connector.get_sql_session()
+    row = session.query(Users).filter(Users.id_users == id_users).first()
+    
+    if periode == "weekly":
+        if status == "Y":            
+            row.periode_weekly = "N"
+        else:
+            row.periode_weekly = "Y"
+    else:
+        if status == "Y":            
+            row.periode_monthly = "N"
+        else:
+            row.periode_monthly = "Y"        
+    session.add(row)
+    session.commit()
+    session.close()
 
 
 def InsertUser(id_users, fullname, phone, email, created_date, status_active, periode_weekly, periode_monthly):
