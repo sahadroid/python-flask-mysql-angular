@@ -53,5 +53,9 @@ Log User Subscribes
 Update Edit Data User
 ![canopyscreen](https://user-images.githubusercontent.com/27715383/109381121-ebf0e900-790a-11eb-95f6-6f9a581ff5e4.png)
 
+
 Register New User
 ![canopyscreen](https://user-images.githubusercontent.com/27715383/109381189-5d309c00-790b-11eb-8955-45cb37a8e5a1.png)
+
+Report to PDF
+![canopyscreen](https://user-images.githubusercontent.com/27715383/109784751-f62e2280-7c3d-11eb-80ee-14dd423879a5.png)
