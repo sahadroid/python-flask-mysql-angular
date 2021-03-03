@@ -46,23 +46,29 @@ Sample:
 ListRecord
 ![canopyscreen](https://user-images.githubusercontent.com/27715383/109784207-69836480-7c3d-11eb-97ee-1ec81181c213.png)
 
+
+
 Log User Subscribes
 ![canopyscreen](https://user-images.githubusercontent.com/27715383/109784351-92a3f500-7c3d-11eb-953f-abced93d2f29.png)
+
 
 
 Update Edit Data User
 ![canopyscreen](https://user-images.githubusercontent.com/27715383/109381121-ebf0e900-790a-11eb-95f6-6f9a581ff5e4.png)
 
 
+
 Register New User
 ![canopyscreen](https://user-images.githubusercontent.com/27715383/109381189-5d309c00-790b-11eb-8955-45cb37a8e5a1.png)
+
 
 
 Print To PDF - Select From Date - To Date  
 ![canopyscreen](https://user-images.githubusercontent.com/27715383/109785545-cfbcb700-7c3e-11eb-8b08-706a9f887f7b.png)
 
 
+
 Report to PDF
-![canopyscreen](https://user-images.githubusercontent.com/27715383/109784751-f62e2280-7c3d-11eb-80ee-14dd423879a5.png)
+![canopyscreen](https://user-images.githubusercontent.com/27715383/109786129-6d17eb00-7c3f-11eb-98bd-e45ca0a6c3a0.png)
 
 
